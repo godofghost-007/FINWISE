@@ -1,0 +1,187 @@
+{
+  "project_structure": {
+    "Project": "FinWise - Smart Student Financial Management Platform",
+    "Vision": "Empowering Indian college students with AI-powered financial intelligence",
+    "Core_Problem": "73% of students don't maintain proper expense accounts, leading to mid-month financial crisis",
+    "Solution_Overview": "UPI-integrated, AI-powered expense optimization with gamified engagement"
+  },
+  "technical_architecture": {
+    "Frontend": {
+      "Technology": "Progressive Web App (PWA)",
+      "Framework": "React.js with TypeScript",
+      "UI_Library": "Chakra UI / Material-UI",
+      "State_Management": "Redux Toolkit",
+      "Charts": "Chart.js / Recharts",
+      "Mobile_Support": "Responsive design + PWA features"
+    },
+    "Backend": {
+      "Runtime": "Node.js with Express.js",
+      "Database": "MongoDB (primary) + Redis (caching)",
+      "Authentication": "JWT + OAuth 2.0",
+      "Payment_Integration": "UPI APIs (Razorpay/Payu/NPCI)",
+      "AI_Engine": "Python microservice with scikit-learn/TensorFlow",
+      "API_Design": "RESTful APIs with OpenAPI documentation"
+    },
+    "Infrastructure": {
+      "Cloud_Platform": "AWS / Google Cloud",
+      "Container": "Docker + Kubernetes",
+      "CDN": "CloudFlare",
+      "Monitoring": "New Relic / DataDog",
+      "Security": "SSL/TLS, API rate limiting, encryption"
+    }
+  },
+  "features_breakdown": {
+    "Must_Have_Features": [
+      {
+        "feature": "User Registration & Onboarding",
+        "description": "Simple signup with college email verification",
+        "effort": "2 weeks",
+        "priority": "P0"
+      },
+      {
+        "feature": "Expense Entry System",
+        "description": "Manual & camera-based receipt scanning",
+        "effort": "3 weeks",
+        "priority": "P0"
+      },
+      {
+        "feature": "UPI Integration",
+        "description": "Auto-categorization of UPI transactions",
+        "effort": "4 weeks",
+        "priority": "P0"
+      },
+      {
+        "feature": "Budget Management",
+        "description": "Category-wise budget setting & tracking",
+        "effort": "2 weeks",
+        "priority": "P0"
+      },
+      {
+        "feature": "Dashboard Analytics",
+        "description": "Spending overview with visual charts",
+        "effort": "3 weeks",
+        "priority": "P0"
+      }
+    ],
+    "Should_Have_Features": [
+      {
+        "feature": "AI Recommendations Engine",
+        "description": "Personalized money-saving suggestions",
+        "effort": "4 weeks",
+        "priority": "P1"
+      },
+      {
+        "feature": "Gamification System",
+        "description": "Streaks, badges, challenges",
+        "effort": "3 weeks",
+        "priority": "P1"
+      },
+      {
+        "feature": "Peer Comparison",
+        "description": "Anonymous spending benchmarks",
+        "effort": "2 weeks",
+        "priority": "P1"
+      },
+      {
+        "feature": "Smart Notifications",
+        "description": "Budget alerts & spending insights",
+        "effort": "2 weeks",
+        "priority": "P1"
+      }
+    ],
+    "Could_Have_Features": [
+      {
+        "feature": "Social Challenges",
+        "description": "Group savings competitions",
+        "effort": "3 weeks",
+        "priority": "P2"
+      },
+      {
+        "feature": "Investment Tracking",
+        "description": "SIP, mutual funds monitoring",
+        "effort": "4 weeks",
+        "priority": "P2"
+      },
+      {
+        "feature": "Bill Splitting",
+        "description": "Hostel/group expense sharing",
+        "effort": "3 weeks",
+        "priority": "P2"
+      }
+    ]
+  },
+  "user_personas": {
+    "Persona_1": {
+      "name": "Priya - The Overwhelmed Fresher",
+      "age": "18-19",
+      "profile": "First-year engineering student",
+      "monthly_allowance": "\u20b98,000-12,000",
+      "pain_points": [
+        "New to independent financial management",
+        "Overspends on food delivery (\u20b92,500/month)",
+        "Struggles with hostel expense splitting",
+        "No expense tracking habits"
+      ],
+      "behavior": [
+        "Uses UPI frequently but no tracking",
+        "Influenced by peer pressure",
+        "Prefers simple, intuitive interfaces",
+        "Active on social media"
+      ],
+      "goals": [
+        "Learn basic budgeting",
+        "Avoid running out of money mid-month",
+        "Understand where money goes",
+        "Build financial confidence"
+      ]
+    },
+    "Persona_2": {
+      "name": "Arjun - The Budget-Conscious Senior",
+      "age": "21-22",
+      "profile": "Final year with part-time income",
+      "monthly_allowance": "\u20b915,000-18,000 (including gig work)",
+      "pain_points": [
+        "Irregular income from part-time work",
+        "Saving for placements/higher studies",
+        "Managing multiple income sources",
+        "Peer pressure spending on outings"
+      ],
+      "behavior": [
+        "Tech-savvy, wants optimization",
+        "Uses multiple financial apps",
+        "Researches before purchases",
+        "Plans for future expenses"
+      ],
+      "goals": [
+        "Maximize savings for future",
+        "Track irregular income patterns",
+        "Get investment recommendations",
+        "Build emergency fund"
+      ]
+    },
+    "Persona_3": {
+      "name": "Sneha - The Tier-2 Striver",
+      "age": "19-20",
+      "profile": "Small town student in metro city",
+      "monthly_allowance": "\u20b96,000-10,000",
+      "pain_points": [
+        "Limited budget with high living costs",
+        "Family pressure to spend wisely",
+        "Language barriers with English apps",
+        "Unfamiliarity with digital tools"
+      ],
+      "behavior": [
+        "Cash+UPI mix usage",
+        "Price-conscious decisions",
+        "Prefers Hindi/regional language support",
+        "Values family approval"
+      ],
+      "goals": [
+        "Stretch limited budget effectively",
+        "Send regular updates to family",
+        "Learn financial skills",
+        "Avoid unnecessary expenses"
+      ]
+    }
+  }
+}

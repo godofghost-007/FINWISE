@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FinWise - Smart Student Finance</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <i class="fas fa-chart-line"></i>
+                <span>FinWise</span>
+            </div>
+            <div class="nav-controls">
+                <button class="btn btn--sm nav-btn" id="themeToggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <div class="profile-dropdown">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='16' fill='%2332808D'/%3E%3Ctext x='16' y='20' text-anchor='middle' font-family='Arial' font-size='12' fill='white'%3EAS%3C/text%3E%3C/svg%3E" alt="Profile" class="profile-avatar">
+                    <span>Arjun S.</span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-content">
+                <ul class="nav-menu">
+                    <li class="nav-item active" data-tab="dashboard">
+                        <i class="fas fa-home"></i>
+                        <span>Dashboard</span>
+                    </li>
+                    <li class="nav-item" data-tab="expenses">
+                        <i class="fas fa-receipt"></i>
+                        <span>Expenses</span>
+                    </li>
+                    <li class="nav-item" data-tab="budget">
+                        <i class="fas fa-chart-pie"></i>
+                        <span>Budget</span>
+                    </li>
+                    <li class="nav-item" data-tab="analytics">
+                        <i class="fas fa-chart-bar"></i>
+                        <span>Analytics</span>
+                    </li>
+                    <li class="nav-item" data-tab="achievements">
+                        <i class="fas fa-trophy"></i>
+                        <span>Achievements</span>
+                    </li>
+                    <li class="nav-item" data-tab="ai-chat">
+                        <i class="fas fa-robot"></i>
+                        <span>AI Assistant</span>
+                    </li>
+                    <li class="nav-item" data-tab="settings">
+                        <i class="fas fa-cog"></i>
+                        <span>Settings</span>
+                    </li>
+                </ul>
+            </div>
+        </aside>
+
+        <!-- Content Area -->
+        <div class="content-area">
+            <!-- Dashboard Tab -->
+            <div class="tab-content active" id="dashboard">
+                <!-- Header Stats -->
+                <div class="stats-grid">
+                    <div class="stat-card glassmorphism">
+                        <div class="stat-icon">
+                            <i class="fas fa-wallet"></i>
+                        </div>
+                        <div class="stat-content">
+                            <div class="stat-value" id="totalSpent">₹11,640</div>
+                            <div class="stat-label">Total Spent</div>
+                            <div class="stat-trend">
+                                <i class="fas fa-arrow-down text-success"></i>
+                                <span>18% vs last month</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="stat-card glassmorphism">
+                        <div class="stat-icon">
+                            <i class="fas fa-piggy-bank"></i>
+                        </div>
+                        <div class="stat-content">
+                            <div class="stat-value" id="totalSaved">₹8,500</div>
+                            <div class="stat-label">Total Saved</div>
+                            <div class="stat-trend">
+                                <i class="fas fa-arrow-up text-success"></i>
+                                <span>12% this month</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="stat-card glassmorphism">
+                        <div class="stat-icon">
+                            <i class="fas fa-fire"></i>
+                        </div>
+                        <div class="stat-content">
+                            <div class="stat-value" id="streakDays">23</div>
+                            <div class="stat-label">Day Streak</div>
+                            <div class="stat-trend">
+                                <i class="fas fa-arrow-up text-success"></i>
+                                <span>Personal best!</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="stat-card glassmorphism">
+                        <div class="stat-icon health-score">
+                            <i class="fas fa-heart-pulse"></i>
+                        </div>
+                        <div class="stat-content">
+                            <div class="stat-value" id="healthScore">78</div>
+                            <div class="stat-label">Health Score</div>
+                            <div class="health-status">Good</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Actions -->
+                <div class="quick-actions glassmorphism">
+                    <h3>Quick Actions</h3>
+                    <div class="action-buttons">
+                        <button class="action-btn" id="addExpenseBtn">
+                            <i class="fas fa-plus"></i>
+                            <span>Add Expense</span>
+                        </button>
+                        <button class="action-btn" id="voiceExpenseBtn">
+                            <i class="fas fa-microphone"></i>
+                            <span>Voice Entry</span>
+                        </button>
+                        <button class="action-btn" id="scanReceiptBtn">
+                            <i class="fas fa-camera"></i>
+                            <span>Scan Receipt</span>
+                        </button>
+                        <button class="action-btn" id="upiSyncBtn">
+                            <i class="fas fa-sync"></i>
+                            <span>UPI Sync</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Spending Heatmap -->
+                <div class="heatmap-container glassmorphism">
+                    <h3>Spending Heatmap</h3>
+                    <div class="heatmap-calendar" id="heatmapCalendar">
+                        <!-- Calendar will be generated by JS -->
+                    </div>
+                </div>
+
+                <!-- AI Recommendations -->
+                <div class="ai-recommendations glassmorphism">
+                    <h3>AI Recommendations</h3>
+                    <div class="recommendations-list" id="recommendationsList">
+                        <!-- Recommendations will be populated by JS -->
+                    </div>
+                </div>
+
+                <!-- Recent Transactions -->
+                <div class="recent-transactions glassmorphism">
+                    <h3>Recent Transactions</h3>
+                    <div class="transaction-list" id="recentTransactions">
+                        <!-- Transactions will be populated by JS -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Expenses Tab -->
+            <div class="tab-content" id="expenses">
+                <div class="expenses-header">
+                    <h2>Expense Management</h2>
+                    <button class="btn btn--primary" id="addExpenseModal">
+                        <i class="fas fa-plus"></i>
+                        Add Expense
+                    </button>
+                </div>
+
+                <!-- Expense Filters -->
+                <div class="expense-filters glassmorphism">
+                    <div class="filter-row">
+                        <input type="text" class="form-control" placeholder="Search expenses..." id="expenseSearch">
+                        <select class="form-control" id="categoryFilter">
+                            <option value="">All Categories</option>
+                            <option value="Food & Dining">Food & Dining</option>
+                            <option value="Transportation">Transportation</option>
+                            <option value="Education">Education</option>
+                            <option value="Entertainment">Entertainment</option>
+                            <option value="Personal Care">Personal Care</option>
+                            <option value="Hostel/Rent">Hostel/Rent</option>
+                        </select>
+                        <input type="date" class="form-control" id="dateFrom">
+                        <input type="date" class="form-control" id="dateTo">
+                    </div>
+                </div>
+
+                <!-- Expense List -->
+                <div class="expense-list-container">
+                    <div class="expense-list" id="expenseList">
+                        <!-- Expenses will be populated by JS -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Budget Tab -->
+            <div class="tab-content" id="budget">
+                <div class="budget-header">
+                    <h2>Budget Management</h2>
+                    <div class="budget-period">
+                        <span>August 2025</span>
+                        <div class="budget-progress">
+                            <span>₹11,640 / ₹15,000</span>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 77.6%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Budget Categories -->
+                <div class="budget-categories">
+                    <div class="category-grid" id="budgetCategories">
+                        <!-- Budget categories will be populated by JS -->
+                    </div>
+                </div>
+
+                <!-- Savings Goals -->
+                <div class="savings-goals glassmorphism">
+                    <h3>Savings Goals</h3>
+                    <div class="goals-list" id="savingsGoals">
+                        <!-- Goals will be populated by JS -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Analytics Tab -->
+            <div class="tab-content" id="analytics">
+                <div class="analytics-header">
+                    <h2>Financial Analytics</h2>
+                    <div class="analytics-period">
+                        <select class="form-control">
+                            <option>Last 6 Months</option>
+                            <option>Last Year</option>
+                            <option>This Year</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Charts Grid -->
+                <div class="charts-grid">
+                    <div class="chart-container glassmorphism" style="position: relative; height: 300px;">
+                        <h3>Monthly Spending Trend</h3>
+                        <canvas id="spendingTrendChart"></canvas>
+                    </div>
+
+                    <div class="chart-container glassmorphism" style="position: relative; height: 300px;">
+                        <h3>Category Breakdown</h3>
+                        <canvas id="categoryChart"></canvas>
+                    </div>
+
+                    <div class="chart-container glassmorphism" style="position: relative; height: 300px;">
+                        <h3>Spending Velocity</h3>
+                        <canvas id="velocityChart"></canvas>
+                    </div>
+
+                    <div class="chart-container glassmorphism" style="position: relative; height: 300px;">
+                        <h3>Savings Progress</h3>
+                        <canvas id="savingsChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Achievements Tab -->
+            <div class="tab-content" id="achievements">
+                <div class="achievements-header">
+                    <h2>Achievements & Challenges</h2>
+                    <div class="level-info">
+                        <div class="level-badge">Level 12</div>
+                        <div class="xp-info">
+                            <span>2,450 / 2,500 XP</span>
+                            <div class="xp-bar">
+                                <div class="xp-fill" style="width: 98%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Active Challenges -->
+                <div class="active-challenges glassmorphism">
+                    <h3>Active Challenges</h3>
+                    <div class="challenges-list" id="activeChallenges">
+                        <!-- Challenges will be populated by JS -->
+                    </div>
+                </div>
+
+                <!-- Achievements Grid -->
+                <div class="achievements-grid">
+                    <div class="achievements-list" id="achievementsList">
+                        <!-- Achievements will be populated by JS -->
+                    </div>
+                </div>
+
+                <!-- Leaderboard -->
+                <div class="leaderboard glassmorphism">
+                    <h3>College Leaderboard</h3>
+                    <div class="leaderboard-list" id="leaderboardList">
+                        <!-- Leaderboard will be populated by JS -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- AI Chat Tab -->
+            <div class="tab-content" id="ai-chat">
+                <div class="ai-chat-container glassmorphism">
+                    <div class="chat-header">
+                        <div class="ai-avatar">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <div class="ai-info">
+                            <h3>Fina - Your AI Financial Assistant</h3>
+                            <span class="ai-status">Online</span>
+                        </div>
+                    </div>
+
+                    <div class="chat-messages" id="chatMessages">
+                        <div class="message ai-message">
+                            <div class="message-content">
+                                Hi Arjun! I'm Fina, your personal financial assistant. I can help you with budgeting advice, spending analysis, and savings strategies. What would you like to know?
+                            </div>
+                            <div class="message-time">Just now</div>
+                        </div>
+                    </div>
+
+                    <div class="chat-input-container">
+                        <input type="text" class="chat-input" placeholder="Ask Fina anything about your finances..." id="chatInput">
+                        <button class="chat-send-btn" id="chatSendBtn">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+
+                    <div class="quick-suggestions">
+                        <button class="suggestion-btn">How can I save more money?</button>
+                        <button class="suggestion-btn">Analyze my spending patterns</button>
+                        <button class="suggestion-btn">Budget recommendations</button>
+                        <button class="suggestion-btn">Investment advice</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Settings Tab -->
+            <div class="tab-content" id="settings">
+                <div class="settings-header">
+                    <h2>Settings & Preferences</h2>
+                </div>
+
+                <div class="settings-sections">
+                    <!-- Profile Settings -->
+                    <div class="settings-section glassmorphism">
+                        <h3>Profile Information</h3>
+                        <div class="form-group">
+                            <label class="form-label">Full Name</label>
+                            <input type="text" class="form-control" value="Arjun Sharma">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Email</label>
+                            <input type="email" class="form-control" value="arjun.sharma@iitg.ac.in">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Monthly Allowance</label>
+                            <input type="number" class="form-control" value="15000">
+                        </div>
+                    </div>
+
+                    <!-- Appearance Settings -->
+                    <div class="settings-section glassmorphism">
+                        <h3>Appearance</h3>
+                        <div class="setting-item">
+                            <label>Theme</label>
+                            <select class="form-control">
+                                <option>Auto (System)</option>
+                                <option>Light</option>
+                                <option>Dark</option>
+                            </select>
+                        </div>
+                        <div class="setting-item">
+                            <label>Language</label>
+                            <select class="form-control">
+                                <option>English</option>
+                                <option>Hindi</option>
+                                <option>Bengali</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Notification Settings -->
+                    <div class="settings-section glassmorphism">
+                        <h3>Notifications</h3>
+                        <div class="setting-item">
+                            <label>Budget Alerts</label>
+                            <label class="toggle-switch">
+                                <input type="checkbox" checked>
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                        <div class="setting-item">
+                            <label>Spending Reminders</label>
+                            <label class="toggle-switch">
+                                <input type="checkbox" checked>
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                        <div class="setting-item">
+                            <label>Achievement Notifications</label>
+                            <label class="toggle-switch">
+                                <input type="checkbox" checked>
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Privacy Settings -->
+                    <div class="settings-section glassmorphism">
+                        <h3>Privacy & Security</h3>
+                        <div class="setting-item">
+                            <label>Biometric Authentication</label>
+                            <label class="toggle-switch">
+                                <input type="checkbox">
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                        <div class="setting-item">
+                            <label>Anonymous Leaderboard</label>
+                            <label class="toggle-switch">
+                                <input type="checkbox" checked>
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Add Expense Modal -->
+    <div class="modal hidden" id="expenseModal">
+        <div class="modal-overlay" id="modalOverlay"></div>
+        <div class="modal-content glassmorphism" id="modalContent">
+            <div class="modal-header">
+                <h3>Add New Expense</h3>
+                <button class="modal-close" id="closeExpenseModal" type="button">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="expenseForm">
+                    <div class="form-group">
+                        <label class="form-label">Amount (₹)</label>
+                        <input type="number" class="form-control" id="expenseAmount" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Category</label>
+                        <select class="form-control" id="expenseCategory" required>
+                            <option value="">Select Category</option>
+                            <option value="Food & Dining">Food & Dining</option>
+                            <option value="Transportation">Transportation</option>
+                            <option value="Education">Education</option>
+                            <option value="Entertainment">Entertainment</option>
+                            <option value="Personal Care">Personal Care</option>
+                            <option value="Hostel/Rent">Hostel/Rent</option>
+                            <option value="Miscellaneous">Miscellaneous</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Vendor/Description</label>
+                        <input type="text" class="form-control" id="expenseVendor" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Payment Method</label>
+                        <select class="form-control" id="expensePayment">
+                            <option value="UPI">UPI</option>
+                            <option value="Cash">Cash</option>
+                            <option value="Card">Card</option>
+                            <option value="Net Banking">Net Banking</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Date</label>
+                        <input type="date" class="form-control" id="expenseDate" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Tags (optional)</label>
+                        <input type="text" class="form-control" id="expenseTags" placeholder="e.g., friends, essential, weekend">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn--secondary" id="cancelExpense">Cancel</button>
+                <button type="submit" form="expenseForm" class="btn btn--primary">Add Expense</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

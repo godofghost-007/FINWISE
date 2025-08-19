@@ -1,0 +1,241 @@
+{
+  "business_model": {
+    "Revenue_Streams": {
+      "Freemium_Model": {
+        "Free_Tier": {
+          "features": [
+            "Basic expense tracking (50 entries/month)",
+            "Simple budget management",
+            "Basic UPI integration",
+            "Monthly summary reports",
+            "Basic achievement system"
+          ],
+          "limitations": [
+            "Limited AI recommendations (2/week)",
+            "Basic analytics only",
+            "No export features",
+            "Community support only"
+          ]
+        },
+        "Premium_Tier": {
+          "price": "\u20b999/month or \u20b9999/year",
+          "features": [
+            "Unlimited expense tracking",
+            "Advanced AI recommendations",
+            "Detailed analytics & insights",
+            "Investment goal tracking",
+            "Priority customer support",
+            "Data export in multiple formats",
+            "Advanced gamification features",
+            "Peer comparison insights"
+          ]
+        }
+      },
+      "Additional_Revenue": {
+        "Merchant_Partnerships": {
+          "commission": "2-5% on referred purchases",
+          "partners": [
+            "Food delivery apps",
+            "E-commerce",
+            "Educational platforms"
+          ],
+          "estimated_revenue": "\u20b950-200 per user per year"
+        },
+        "Financial_Product_Referrals": {
+          "products": [
+            "Student credit cards",
+            "Micro-investments",
+            "Insurance"
+          ],
+          "commission": "\u20b9200-1000 per successful referral",
+          "conversion_rate": "5-10% of user base"
+        },
+        "Campus_Partnerships": {
+          "services": [
+            "Fee management integration",
+            "Campus analytics"
+          ],
+          "pricing": "\u20b950,000-200,000 per college per year"
+        }
+      }
+    },
+    "Cost_Structure": {
+      "Development_Costs": {
+        "Team": "\u20b930L/year (6 developers, 1 designer, 1 PM)",
+        "Infrastructure": "\u20b95L/year (AWS, monitoring, security)",
+        "Third_Party_Services": "\u20b93L/year (UPI APIs, analytics, notifications)"
+      },
+      "Operations_Costs": {
+        "Marketing": "\u20b915L/year (digital marketing, campus ambassadors)",
+        "Legal_Compliance": "\u20b92L/year (data privacy, financial regulations)",
+        "Customer_Support": "\u20b93L/year (support team, tools)"
+      },
+      "Total_Annual_Cost": "\u20b958L for first year"
+    },
+    "Financial_Projections": {
+      "Year_1": {
+        "users": 10000,
+        "premium_conversion": "5%",
+        "revenue": "\u20b98L (premium) + \u20b95L (partnerships) = \u20b913L",
+        "profit_loss": "-\u20b945L (investment phase)"
+      },
+      "Year_2": {
+        "users": 50000,
+        "premium_conversion": "8%",
+        "revenue": "\u20b948L (premium) + \u20b925L (partnerships) = \u20b973L",
+        "profit_loss": "-\u20b915L (growth phase)"
+      },
+      "Year_3": {
+        "users": 150000,
+        "premium_conversion": "12%",
+        "revenue": "\u20b9180L (premium) + \u20b975L (partnerships) = \u20b9255L",
+        "profit_loss": "+\u20b9120L (profitable)"
+      }
+    }
+  },
+  "gtm_strategy": {
+    "Phase_1_Pilot": {
+      "timeline": "Months 1-3",
+      "target_colleges": [
+        {
+          "name": "IIT Guwahati",
+          "type": "Tier-1 Technical",
+          "students": 8000,
+          "strategy": "Tech-savvy early adopters, engineering student focus",
+          "channels": [
+            "Tech clubs",
+            "Hackathons",
+            "Professor partnerships"
+          ]
+        },
+        {
+          "name": "Manipal University",
+          "type": "Tier-1 Multi-disciplinary",
+          "students": 25000,
+          "strategy": "Diverse geographic mix, multiple campuses",
+          "channels": [
+            "Student council",
+            "Fest sponsorships",
+            "Influencer partnerships"
+          ]
+        },
+        {
+          "name": "LNMIIT Jaipur",
+          "type": "Tier-2 Technical",
+          "students": 4000,
+          "strategy": "Price-sensitive, high engagement potential",
+          "channels": [
+            "Hostel campaigns",
+            "Referral programs",
+            "Financial literacy workshops"
+          ]
+        }
+      ],
+      "success_metrics": [
+        "1000+ registered users per college",
+        "60% UPI integration rate",
+        "4+ app sessions per week per user",
+        "30% month-2 retention rate"
+      ]
+    },
+    "Phase_2_Expansion": {
+      "timeline": "Months 4-8",
+      "target": "15+ colleges across India",
+      "college_types": [
+        "5 IITs/NITs (technical focus)",
+        "5 Central Universities (diverse disciplines)",
+        "5 Regional colleges (price-sensitive markets)"
+      ],
+      "marketing_channels": {
+        "Digital_Marketing": {
+          "budget": "\u20b95L/month",
+          "channels": [
+            "Instagram ads",
+            "YouTube sponsorships",
+            "Google Ads"
+          ],
+          "targeting": "College students aged 18-22 in target cities"
+        },
+        "Campus_Ambassadors": {
+          "program": "50 ambassadors across colleges",
+          "incentives": "\u20b92000/month + performance bonuses",
+          "responsibilities": [
+            "User onboarding",
+            "Event organization",
+            "Feedback collection"
+          ]
+        },
+        "Partnership_Marketing": {
+          "hostel_partnerships": "QR codes in mess halls and common areas",
+          "canteen_integration": "Payment system integration with expense tracking",
+          "library_partnerships": "Study space advertisements and workshops"
+        }
+      }
+    },
+    "Phase_3_Scale": {
+      "timeline": "Months 9-18",
+      "target": "100+ colleges, 500K+ users",
+      "strategies": [
+        "University-level partnerships for fee management",
+        "State government collaborations for financial literacy",
+        "Corporate partnerships for internship stipend management",
+        "Alumni network engagement for mentorship features"
+      ]
+    }
+  },
+  "risk_assessment": {
+    "High_Risk_Factors": {
+      "User_Adoption": {
+        "risk": "Students may not change existing financial habits",
+        "probability": "Medium",
+        "impact": "High",
+        "mitigation": [
+          "Strong gamification and social features",
+          "Referral incentives and peer pressure",
+          "Simple onboarding with immediate value",
+          "Campus ambassador program for peer influence"
+        ]
+      },
+      "Competition": {
+        "risk": "Large fintech companies copy approach",
+        "probability": "High",
+        "impact": "High",
+        "mitigation": [
+          "Build strong student community and brand loyalty",
+          "Continuous feature innovation and user feedback",
+          "Focus on student-specific needs vs generic solutions",
+          "Strategic partnerships with colleges"
+        ]
+      },
+      "Regulatory_Compliance": {
+        "risk": "RBI regulations on financial data handling",
+        "probability": "Medium",
+        "impact": "Medium",
+        "mitigation": [
+          "Legal compliance team and regular audits",
+          "Data privacy best practices and certifications",
+          "Partnership with established payment gateways",
+          "Transparent data usage policies"
+        ]
+      }
+    },
+    "Medium_Risk_Factors": {
+      "Technical_Scalability": {
+        "risk": "System performance under high load",
+        "mitigation": [
+          "Cloud-native architecture",
+          "Load testing",
+          "Auto-scaling"
+        ]
+      },
+      "Revenue_Generation": {
+        "risk": "Low willingness to pay among students",
+        "mitigation": [
+          "Strong free tier",
+          "Clear value demonstration",
+          "Partner revenue focus"
+        ]
+      }
+    }
+  }
+}

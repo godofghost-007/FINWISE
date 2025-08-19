@@ -1,0 +1,167 @@
+{
+  "implementation_roadmap": {
+    "Phase_1_MVP": {
+      "timeline": "Weeks 1-8",
+      "goal": "Launch functional prototype for 3 colleges",
+      "features": [
+        "User registration & authentication",
+        "Basic expense entry (manual)",
+        "Simple budget tracking",
+        "UPI integration (basic)",
+        "Dashboard with spending overview"
+      ],
+      "tech_deliverables": [
+        "Frontend PWA with core screens",
+        "Backend APIs for user management",
+        "MongoDB database setup",
+        "Basic UPI payment gateway integration",
+        "Responsive design for mobile/web"
+      ]
+    },
+    "Phase_2_Enhancement": {
+      "timeline": "Weeks 9-16",
+      "goal": "Add intelligence & engagement features",
+      "features": [
+        "AI recommendation engine",
+        "Gamification (streaks, badges)",
+        "Advanced analytics dashboard",
+        "Smart notifications",
+        "Receipt scanning with OCR"
+      ],
+      "tech_deliverables": [
+        "Machine learning models for recommendations",
+        "Real-time notification system",
+        "Advanced data visualization",
+        "Mobile app (React Native)",
+        "Performance optimization"
+      ]
+    },
+    "Phase_3_Scale": {
+      "timeline": "Weeks 17-24",
+      "goal": "Scale to 15+ colleges & advanced features",
+      "features": [
+        "Social features & peer comparison",
+        "Investment tracking",
+        "Multi-language support",
+        "Advanced security features",
+        "Merchant partnerships"
+      ],
+      "tech_deliverables": [
+        "Microservices architecture",
+        "Advanced analytics & reporting",
+        "Third-party integrations",
+        "Enterprise security features",
+        "Auto-scaling infrastructure"
+      ]
+    }
+  },
+  "api_structure": {
+    "Authentication_APIs": {
+      "POST /api/auth/register": "User registration with college verification",
+      "POST /api/auth/login": "User login with JWT token",
+      "POST /api/auth/verify-otp": "OTP verification for mobile",
+      "POST /api/auth/forgot-password": "Password reset functionality"
+    },
+    "User_Management_APIs": {
+      "GET /api/user/profile": "Get user profile details",
+      "PUT /api/user/profile": "Update user profile",
+      "POST /api/user/preferences": "Set app preferences",
+      "GET /api/user/stats": "Get user financial stats"
+    },
+    "Expense_Management_APIs": {
+      "POST /api/expenses": "Add new expense entry",
+      "GET /api/expenses": "Get user expenses with filters",
+      "PUT /api/expenses/:id": "Update specific expense",
+      "DELETE /api/expenses/:id": "Delete expense entry",
+      "POST /api/expenses/bulk": "Bulk expense import",
+      "POST /api/expenses/scan-receipt": "OCR receipt scanning"
+    },
+    "Budget_APIs": {
+      "POST /api/budget": "Create/update budget",
+      "GET /api/budget": "Get current budget status",
+      "GET /api/budget/analysis": "Budget vs actual analysis",
+      "POST /api/budget/categories": "Manage budget categories"
+    },
+    "UPI_Integration_APIs": {
+      "POST /api/payment/webhook": "UPI transaction webhook",
+      "GET /api/payment/transactions": "Get payment history",
+      "POST /api/payment/link-account": "Link bank account",
+      "GET /api/payment/balance": "Get account balance"
+    },
+    "AI_Recommendation_APIs": {
+      "GET /api/ai/recommendations": "Get personalized recommendations",
+      "POST /api/ai/feedback": "User feedback on recommendations",
+      "GET /api/ai/insights": "Spending pattern insights",
+      "GET /api/ai/peer-comparison": "Anonymous peer benchmarking"
+    },
+    "Gamification_APIs": {
+      "GET /api/gamification/achievements": "Get user achievements",
+      "GET /api/gamification/leaderboard": "Get college leaderboard",
+      "POST /api/gamification/challenge": "Join/create challenges",
+      "GET /api/gamification/streak": "Get current streak status"
+    }
+  },
+  "database_schema": {
+    "users": {
+      "fields": {
+        "_id": "ObjectId",
+        "email": "String (unique)",
+        "phone": "String (unique)",
+        "college_name": "String",
+        "college_year": "Number",
+        "monthly_allowance": "Number",
+        "created_at": "Date",
+        "updated_at": "Date",
+        "is_verified": "Boolean",
+        "preferences": "Object"
+      }
+    },
+    "expenses": {
+      "fields": {
+        "_id": "ObjectId",
+        "user_id": "ObjectId (ref: users)",
+        "amount": "Number",
+        "category": "String",
+        "description": "String",
+        "date": "Date",
+        "payment_method": "String (UPI/Cash/Card)",
+        "transaction_id": "String",
+        "created_at": "Date",
+        "tags": "Array"
+      }
+    },
+    "budgets": {
+      "fields": {
+        "_id": "ObjectId",
+        "user_id": "ObjectId (ref: users)",
+        "month": "Number",
+        "year": "Number",
+        "categories": "Object",
+        "total_budget": "Number",
+        "created_at": "Date"
+      }
+    },
+    "achievements": {
+      "fields": {
+        "_id": "ObjectId",
+        "user_id": "ObjectId (ref: users)",
+        "achievement_type": "String",
+        "earned_date": "Date",
+        "description": "String",
+        "points": "Number"
+      }
+    },
+    "recommendations": {
+      "fields": {
+        "_id": "ObjectId",
+        "user_id": "ObjectId (ref: users)",
+        "recommendation_text": "String",
+        "category": "String",
+        "potential_savings": "Number",
+        "created_at": "Date",
+        "is_viewed": "Boolean",
+        "user_feedback": "String"
+      }
+    }
+  }
+}
